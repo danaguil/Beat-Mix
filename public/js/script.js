@@ -1,31 +1,30 @@
-// Drum Array
-let kicks = []
-let snares = []
-let hiHats = []
-let rideCymbals = []
-// need to initialize the arrays before adding anything
+// Drum Arrays
+let kicks = [];
+let snares = [];
+let hiHats = [];
+let rideCymbals = [];
 
-// loop to set all variables with 16 slots to false, using an insert function
+// Initialize the arrays with 16 slots set to false
 function insertFalse(array) {
-    for(let i = 0; i < 16; i++){
+    for (let i = 0; i < 16; i++) {
         array[i] = false;
     }
 }
-// using function to insert false
+
+// Insert false values into all drum arrays
 insertFalse(kicks);
 insertFalse(snares);
 insertFalse(hiHats);
 insertFalse(rideCymbals);
 
-// toggle Drum function, function will flip the boolean value in the correct
-// array at specified index
-function toggleDrum(array,indexNum) {
-    if(!    array) return null;
+// Function to toggle a drum at a specific index
+function toggleDrum(array, indexNum) {
+    // Check if the array is valid (one of the drum arrays)
+    if (![kicks, snares, hiHats, rideCymbals].includes(array)) return null;
 
-    if(array === kicks || array === snares || array === hiHats || array === rideCymbals){
-        if (0 <= indexNum && indexNum < 16) {
-            array[indexNum] = !array[indexNum];
-        }
-    }
-    
+    // Check if the index is valid
+    if (!Number.isInteger(indexNum) || indexNum < 0 || indexNum > 15) return null;
+
+    // Toggle the boolean value at the specified index
+    array[indexNum] = !array[indexNum];
 }
