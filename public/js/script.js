@@ -17,14 +17,30 @@ insertFalse(snares);
 insertFalse(hiHats);
 insertFalse(rideCymbals);
 
+function searchArray(array) {
+    switch (array) {
+        case 'kicks':
+            return kicks;
+        case 'snares':
+            return snares;
+        case 'hiHats':
+            return hiHats;
+        case 'rideCymbals':
+            return rideCymbals;
+        default:
+            return;
+    }
+}
+
 // Function to toggle a drum at a specific index
 function toggleDrum(array, indexNum) {
-    // Check if the array is valid (one of the drum arrays)
-    if (![kicks, snares, hiHats, rideCymbals].includes(array)) return null;
-
     // Check if the index is valid
     if (!Number.isInteger(indexNum) || indexNum < 0 || indexNum > 15) return null;
-
+    
+    // Checks if the input array name is valid, using a different function
+    // returns if nothing is found
+    const arrayName =  searchArray(array);
     // Toggle the boolean value at the specified index
-    array[indexNum] = !array[indexNum];
+    arrayName[indexNum] = !arrayName[indexNum];
+
 }
