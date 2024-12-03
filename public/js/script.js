@@ -78,9 +78,11 @@ function invert(array) {
     const arrayName =  searchArray(array);
     // Toggle the boolean value at the specified index
     
-    for (let i = 0; i < 16; i++) {
-        arrayName[i] = !arrayName[i];
-    }
+    if(arrayName){
+        for (let i = 0; i < 16; i++) {
+            arrayName[i] = !arrayName[i];
+        }
+    }     
 }
 
 /*
@@ -96,6 +98,15 @@ function invert(array) {
         - newPresetArray will be passed in ONLY for 'PUT' request 
     
 */
-function presenthandler(requestType,index,newPresetArray){
-    
+function presenthandler(method){
+    if(method !== 'GET' || method !== 'PUT'){
+        let notFoundArray = [400]
+        return notFoundArray;
+    } else if(method === 'GET') {
+            
+    } else if(method === 'PUT'){
+
+    }
+
 }
+
