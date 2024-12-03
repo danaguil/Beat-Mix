@@ -82,3 +82,20 @@ function invert(array) {
         arrayName[i] = !arrayName[i];
     }
 }
+
+/*
+    Following functions are for the server-side, will handle saving and retreiving 
+        drum machine from presetHandler.js
+*/
+
+/*
+    Function will be called within server to get an existing preset or create/update a preset
+    Parameters:
+        - string representing request type : 'GET' or 'PUT'
+        - array index of the presets array 
+        - newPresetArray will be passed in ONLY for 'PUT' request 
+    
+*/
+function presenthandler(requestType,index,newPresetArray){
+    
+}
