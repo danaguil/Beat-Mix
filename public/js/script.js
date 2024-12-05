@@ -90,23 +90,5 @@ function invert(array) {
         drum machine from presetHandler.js
 */
 
-/*
-    Function will be called within server to get an existing preset or create/update a preset
-    Parameters:
-        - string representing request type : 'GET' or 'PUT'
-        - array index of the presets array 
-        - newPresetArray will be passed in ONLY for 'PUT' request 
-    
-*/
-function presenthandler(method){
-    if(method !== 'GET' || method !== 'PUT'){
-        let notFoundArray = [400]
-        return notFoundArray;
-    } else if(method === 'GET') {
-            
-    } else if(method === 'PUT'){
 
-    }
-
-}
 
