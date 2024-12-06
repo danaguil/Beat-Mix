@@ -85,10 +85,6 @@ function invert(array) {
     }     
 }
 
-/*
-    Following functions are for the server-side, will handle saving and retreiving 
-        drum machine from presetHandler.js
-*/
 
 
 

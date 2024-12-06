@@ -11,16 +11,23 @@ const presets = require('./presets');
     
 */
 const presetHandler = (method,index,newPresetArray) => {
-    if(presets[index]){
-        preset[404] 
-    }
+    // if method is 'GET
     if(method === 'GET'){
-        tempArray[1] = newPresetArray[index]; 
-        return tempArray;
-    } else if(method === 'PUT') {
-        tempArray[index] = newPresetArray
+        // Checking if we have a valid index
+        if(presets[index]){
+            // if we do, then return [200] with elem from presets at index
+            return [200,presets[index]]
+        }
+        return [404]; // if given invalid index we return [404], NOT FOUND
+    } else if(method === 'PUT') { // if method is PUT
+        // Checking if we have a valid index
+        if(presets[index]){
+            presets[index] = newPresetArray; // set prests at index to newPresetsArray
+            return [200,presets[index]]; // then return
+        }
+        return [404]; // if given invalid index we return [404], NOT FOUND
     } else {
-        return [400];
+        return [400]; // if given invalid method, we return [400], BAD REQUEST
     }
 
 }
